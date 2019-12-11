@@ -1,0 +1,16 @@
+[LL_WEBREPORT_EXCLUDEHTML /]
+
+[[LL_WEBREPORT_STARTROW /]
+{   "Dataid":[LL_REPTAG=DATAID DEF:'' /],
+    "Name":"[LL_REPTAG=Name DEF:'' /]",
+    "VersionNum":"[LL_REPTAG=VersionNum DEF:'' /]",
+    "ModifyDate":"[LL_REPTAG=ModifyDate DEF:'' /]",
+    "CreateDate":"[LL_REPTAG=CreateDate DEF:'' /]",
+    "AttachmentSize":"[LL_REPTAG=CoverSize DEF:'' /]",
+    "MimeType":"[LL_REPTAG=MimeType DEF:'' /]",
+    "AttachmentType":"[LL_REPTAG=DATAID LLURL:GIF ESCAPEJSON /]",
+    "DownloadURL":"../llisapi.dll[LL_REPTAG=DATAID LLURL:DOWNLOAD ESCAPEJSON /]"}
+    [LL_WEBREPORT_IF "[LL_REPTAG_ROWNUM /]" != "[LL_REPTAG_TOTALROWS /]" /]
+    ,
+    [LL_WEBREPORT_ENDIF /]	
+[LL_WEBREPORT_ENDROW /]]

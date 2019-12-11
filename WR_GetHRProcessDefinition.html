@@ -1,0 +1,72 @@
+
+
+[LL_WEBREPORT_IF '[LL_REPTAG_&processId /]'=='Id_1' /]
+[
+    {
+    "name": "sapBusinessUnit",
+    "dataType":"string",
+    "affectedAttributes": ["sapOrganizationUnitL1","sapOrganizationUnitL2","sapEmployees"],
+    "attributeType": "sapBusinessUnits",
+    "externalBaseUrl": "https://metinvest-dev.n-ix.local:3001", 
+    "wrNickName": null , 
+    "displayName":"Бизнес единица",
+    "required":true,
+    "hidden":false,
+    "readonly":false
+  },
+{
+    "name": "sapOrganizationUnitL1",
+    "affectedAttributes": ["sapOrganizationUnitL2","sapEmployees"],
+    "dataType":"string",
+    "attributeType": "sapOrganizationUnitL1",
+    "externalBaseUrl": "https://metinvest-dev.n-ix.local:3001", 
+    "wrNickName": null , 
+    "displayName":"Уровень 1",
+    "required":false,
+    "hidden":false,
+    "readonly":false
+  },
+{
+    "name": "sapOrganizationUnitL2",
+    "affectedAttributes": ["sapEmployees"],
+    "dataType":"string",
+    "attributeType": "sapOrganizationUnitL2",
+    "externalBaseUrl": "https://metinvest-dev.n-ix.local:3001", 
+    "wrNickName": null , 
+    "displayName":"Уровень 2",
+    "required":false,
+    "hidden":false,
+    "readonly":false
+  }
+]
+[LL_WEBREPORT_ELSE /]
+[{
+	"name": "company",
+	"displayName": "Актив",
+	"dataType": "number",
+        "attributeType": "input",
+	"required": true,
+	"hidden": false,
+	"readonly": false
+}, {
+	"name": "$zst.ceh",
+	"displayName": "Название и номер цеха",
+	"dataType": "string",
+        "attributeType": "input",
+	"required": false,
+	"hidden": false,
+	"readonly": true
+}, {
+	"name": "$zst.tab",
+	"displayName": "Табельный номер",
+	"dataType": "string",
+        "attributeType": "input",
+	"required": false,
+	"hidden": false,
+	"readonly": false
+}]
+[LL_WEBREPORT_ENDIF /]
+
+
+[LL_WEBREPORT_STARTROW /]
+[LL_WEBREPORT_ENDROW /]
